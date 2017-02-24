@@ -1,1 +1,2 @@
-Hi, I'm a file to test checking into Github.
+Hi, I'm a file to TEST checking into Github.
+And he's some changes. 
