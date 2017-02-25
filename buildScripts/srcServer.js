@@ -3,9 +3,18 @@
 import express from 'express';
 import path from 'path';
 import open from 'open';
+import webpack from 'webpack';
+import config from '../webpack.config.dev.js';
 
 const port = 3000;
 const app = express(); //Create an instance of Express.
+const compiler = webpack(config); //Create an instance of Webpack.
+
+//tell Express to use Webpack as middleware.
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath
+}))
 
 //Send all requests from our root folder to the index.html file.
 app.get('/', function (req, res) {
