@@ -1,5 +1,7 @@
 //Set up an Express Web server.
 
+/* eslint-disable no-console */ 
+
 import express from 'express';
 import path from 'path';
 import open from 'open';
